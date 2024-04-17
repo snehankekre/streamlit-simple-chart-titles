@@ -3,6 +3,11 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
+st.set_page_config(
+    page_title="Simple Chart Titles",
+    page_icon=":bar_chart:",
+)
+
 
 @st.cache_data
 def load_col_data():
