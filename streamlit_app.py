@@ -29,7 +29,7 @@ with st.expander("Context :books:"):
 
     | Parameter | Description |
     | --- | --- |
-    | `title` | The title of the chart. If a string, it will be used as the title text. To further customize the title (e.g. add a subtitle, change font size, etc.), pass an [`alt.TitleParams`](https://altair-viz.github.io/user_guide/generated/core/altair.TitleParams.html) object. If None, no title will be displayed. |
+    | `title` *(str, alt.TitleParams, or None)* | The title of the chart. If a string, it will be used as the title text. To further customize the title (e.g. add a subtitle, change font size, etc.), pass an [`alt.TitleParams`](https://altair-viz.github.io/user_guide/generated/core/altair.TitleParams.html) object. If None, no title will be displayed. |
 
 
     """
