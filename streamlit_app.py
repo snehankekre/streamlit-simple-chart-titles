@@ -71,10 +71,18 @@ chart_data = load_data()
 
 
 container1 = st.container(border=True)
+title = container1.text_input(
+    "Enter a title for the chart", "Line Chart with Default Title"
+)
+st.write(
+    """
+
+    """
+)
 container1.line_chart(
     chart_data,
     use_container_width=True,
-    title="Line Chart with Default Title",
+    title=title,
 )
 
 st.code(
@@ -88,13 +96,16 @@ st.line_chart(
 )
 
 container2 = st.container(border=True)
-
+title = container2.text_input("Enter a title for the chart", "Line Chart title")
+subtitle = container2.text_input(
+    "Enter a subtitle for the chart", "With a subtitle below", help="Subtitles are displayed below the title. They are optional."
+)
 container2.line_chart(
     chart_data,
     use_container_width=True,
     title=alt.TitleParams(
-        text="Line Chart title",
-        subtitle="With a subtitle below",
+        text=title,
+        subtitle=subtitle,
     ),
 )
 
@@ -112,16 +123,180 @@ st.line_chart(
 )
 
 container3 = st.container(border=True)
-
+title = container3.text_input(
+    "Enter a title for the chart",
+    "Centered title with custom font, size, color, and anchor",
+)
+fontSize = container3.slider("Font size", 1, 50, 14)
+font = container3.selectbox("Font", ["Comic Sans MS", "Times New Roman", "Courier New"])
+anchor = container3.selectbox(
+    "Anchor",
+    ["middle", "start", "end"],
+    help="The anchor position for the title relative to the chart. One of 'start', 'middle', or 'end'.",
+)
+color = container3.selectbox(
+    "Color",
+    [
+        "steelblue",
+        "black",
+        "silver",
+        "gray",
+        "white",
+        "maroon",
+        "red",
+        "purple",
+        "fuchsia",
+        "green",
+        "lime",
+        "olive",
+        "yellow",
+        "navy",
+        "blue",
+        "teal",
+        "aqua",
+        "orange",
+        "aliceblue",
+        "antiquewhite",
+        "aquamarine",
+        "azure",
+        "beige",
+        "bisque",
+        "blanchedalmond",
+        "blueviolet",
+        "brown",
+        "burlywood",
+        "cadetblue",
+        "chartreuse",
+        "chocolate",
+        "coral",
+        "cornflowerblue",
+        "cornsilk",
+        "crimson",
+        "cyan",
+        "darkblue",
+        "darkcyan",
+        "darkgoldenrod",
+        "darkgray",
+        "darkgreen",
+        "darkgrey",
+        "darkkhaki",
+        "darkmagenta",
+        "darkolivegreen",
+        "darkorange",
+        "darkorchid",
+        "darkred",
+        "darksalmon",
+        "darkseagreen",
+        "darkslateblue",
+        "darkslategray",
+        "darkslategrey",
+        "darkturquoise",
+        "darkviolet",
+        "deeppink",
+        "deepskyblue",
+        "dimgray",
+        "dimgrey",
+        "dodgerblue",
+        "firebrick",
+        "floralwhite",
+        "forestgreen",
+        "gainsboro",
+        "ghostwhite",
+        "gold",
+        "goldenrod",
+        "greenyellow",
+        "grey",
+        "honeydew",
+        "hotpink",
+        "indianred",
+        "indigo",
+        "ivory",
+        "khaki",
+        "lavender",
+        "lavenderblush",
+        "lawngreen",
+        "lemonchiffon",
+        "lightblue",
+        "lightcoral",
+        "lightcyan",
+        "lightgoldenrodyellow",
+        "lightgray",
+        "lightgreen",
+        "lightgrey",
+        "lightpink",
+        "lightsalmon",
+        "lightseagreen",
+        "lightskyblue",
+        "lightslategray",
+        "lightslategrey",
+        "lightsteelblue",
+        "lightyellow",
+        "limegreen",
+        "linen",
+        "magenta",
+        "mediumaquamarine",
+        "mediumblue",
+        "mediumorchid",
+        "mediumpurple",
+        "mediumseagreen",
+        "mediumslateblue",
+        "mediumspringgreen",
+        "mediumturquoise",
+        "mediumvioletred",
+        "midnightblue",
+        "mintcream",
+        "mistyrose",
+        "moccasin",
+        "navajowhite",
+        "oldlace",
+        "olivedrab",
+        "orangered",
+        "orchid",
+        "palegoldenrod",
+        "palegreen",
+        "paleturquoise",
+        "palevioletred",
+        "papayawhip",
+        "peachpuff",
+        "peru",
+        "pink",
+        "plum",
+        "powderblue",
+        "rosybrown",
+        "royalblue",
+        "saddlebrown",
+        "salmon",
+        "sandybrown",
+        "seagreen",
+        "seashell",
+        "sienna",
+        "skyblue",
+        "slateblue",
+        "slategray",
+        "slategrey",
+        "snow",
+        "springgreen",
+        "steelblue",
+        "tan",
+        "thistle",
+        "tomato",
+        "turquoise",
+        "violet",
+        "wheat",
+        "whitesmoke",
+        "yellowgreen",
+        "rebeccapurple",
+    ],
+)
 container3.area_chart(
     chart_data,
     use_container_width=True,
     title=alt.TitleParams(
-        text="Centered title with custom font, size, color, and anchor",
-        fontSize=14,
-        font="Comic Sans MS",
-        anchor="middle",
-        color="steelblue",
+        text=title,
+        fontSize=fontSize,
+        font=font,
+        anchor=anchor,
+        color=color,
     ),
 )
 
