@@ -6,7 +6,7 @@ Streamlit's [simple charts](https://docs.streamlit.io/develop/api-reference/char
 
 | Parameter | Description |
 | --- | --- |
-| `title` | The title of the chart. If a string, it will be used as the title text. To further customize the title (e.g. add a subtitle, change font size, etc.), pass an [`alt.TitleParams`](https://altair-viz.github.io/user_guide/generated/core/altair.TitleParams.html) object. If None, no title will be displayed. |
+| `title` | The title of the chart. If a string, it will be used as the title text. If None (default), no title will be displayed. |
 
 See the [PoC implementation](https://github.com/streamlit/streamlit/compare/develop...snehan/feature/chart-titles)
 
